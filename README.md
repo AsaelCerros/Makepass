@@ -11,7 +11,7 @@ Change permissions to the file.
 ```
 sudo chmod +x makepass
 ```
-Just copy the script to /usr/bin/ and make it executable.
+Just copy the script to /usr/bin/ and execute it.
 ```
 sudo cp makepass /usr/bin
 makepass
