@@ -1,0 +1,38 @@
+#!/bin/bash
+#This script makes a random string.
+clear #clear terminal window
+echo -e ">>>>>MAKEPASS<<<<<" | toilet -f future -F border 
+echo -e "Select an option to generate a random password"
+echo -e "$(tput setaf 2) 1) $(tput setaf 4) Generates a password including @!^%#... characters(Strong)"
+echo -e "$(tput setaf 2) 2) $(tput setaf 4) Generates a password using Letters and Numbers(Good)"
+echo -e "$(tput setaf 2) 3) $(tput setaf 4) Generates a password using only numbers(Weak)"
+echo -e "$(tput setaf 2) 4) $(tput setaf 4) Generates a password using only letters(Weak)"
+
+printf "$(tput setaf 2)>"  
+
+read OPTION  
+
+echo -e "$(tput setaf 4)Enter password length (e.g 12,32,64:)"
+
+printf "$(tput setaf 2)>$(tput sgr0)"
+
+read LENGTH #specifies length
+
+case $OPTION in
+
+1)
+    </dev/urandom tr -dc 'A-Za-z0-9!#$%&\()*+-<=>?@[]^_{}~' | head -c $LENGTH  ; echo
+    ;;
+2)  
+    </dev/urandom tr -dc 'A-Za-z0-9' | head -c $LENGTH  ; echo
+    ;;
+3)  
+    </dev/urandom tr -dc '0-9' | head -c $LENGTH  ; echo
+    ;;
+4) 
+    </dev/urandom tr -dc 'A-Za-z' | head -c $LENGTH  ; echo
+   ;;
+*)
+  echo -e "$(tput setaf 1)Please select a valid option$(tput sgr0)"
+   ;;
+esac
