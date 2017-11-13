@@ -5,7 +5,7 @@ You need to install the toilet package to display the banner, you can do this ru
 ```sudo apt-get install toilet```.  
 ## Installation
 ```
-https://github.com/a324603/Makepass.git
+git clone https://github.com/a324603/Makepass.git
 cd Makepass
 ```
 Change permissions to the file.
